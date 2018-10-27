@@ -35,14 +35,14 @@ import ast
 
 
 
-path = '/Users/e31989/Desktop/e31989/Documents/'
+path = '../dataset/'
 database_nml = path + 'sm_database/normal_np.json'
 database_int = path + 'sm_database/internal_np.json'
 
 #sm_file = 'Smart_Contract_Addresses.list'
-sm_file = 'sm_add_nponzi.csv'
+sm_file = 'not_ponzi.csv'
 
-with open(path + sm_file,'rt') as f:
+with open(path + sm_file, 'rt') as f:
     truc = csv.reader(f)
     add = list(truc)
     
@@ -50,10 +50,10 @@ with open(path + sm_file,'rt') as f:
 addresses = [pk[:42] for pklist in add for pk in pklist] 
 
 #create files
-nml = open(database_nml,'w')
+nml = open(database_nml, 'w')
 nml.close()
-#fired = open(database_int, 'w')
-#fired.close()
+fired = open(database_int, 'w')
+fired.close()
 
 
 

@@ -22,26 +22,31 @@ from web3 import Web3
 import csv
 
 #sm_file = 'Smart_Contract_Addresses.list'
-sm_file='sm_add_nponzi.csv'
-path = '/Users/e31989/Desktop/e31989/Documents/'
-database_bcode = path +'sm_database/bytecode_np/'
+sm_file='not_ponzi.csv'
+path = '../dataset/'
+database_bcode = path + 'bytecode_np/'
 
 web3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/TO1X2JTG8k9PiaYd0iQr'))
 
 
-with open(path + sm_file,'rt') as f:
+with open(path + sm_file, 'rt') as f:
     truc = csv.reader(f)
     add = list(truc)
-    
+
 
 addresses = [pk[:42] for pklist in add for pk in pklist] 
             
-          
-for ad in addresses:
-    with open(database_bcode  + ad + '.json','w') as f:
-        print(ad)
-        f.write(repr(web3.eth.getCode(web3.toChecksumAddress(ad)))[12:-2])
-    f.close()
+# print('addresses: ', addresses)
+# print('add: ', add)
+
+# for ad in addresses:
+for ad in add:
+    if '0x' in ad[1]:
+        with open(database_bcode + ad[1] + '.json', 'w') as f:
+            # print(type(ad))
+            print(ad[1])
+            f.write(repr(web3.eth.getCode(web3.toChecksumAddress(ad[1])))[12:-2])
+        f.close()
     #Disasemble
     #print(ad)
     #os.system('cat /Users/e31989/Documents/sm_database/bytecode/' + ad +'.json | evmdis > /Users/e31989/Documents/features/' + ad + '.json' )

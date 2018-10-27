@@ -34,17 +34,17 @@ t0 = time.clock()
 
 print("define variable and load data")
 
-path = '/Users/e31989/Desktop/e31989/Documents/sm_database/'
+path = '../dataset/'
 
 database_nml = path + 'normal.json'
 database_int = path + 'internal.json'
 database_op = path + 'opcode/opcodes_count/'
 
-database_nml_np = path + 'normal_np.json'
-database_int_np = path + 'internal_np.json'
-database_op_np = path + 'opcode_np/opcode_count/bytecode_np/'
+database_nml_np = path + 'sm_database/normal_np.json'
+database_int_np = path + 'sm_database/internal_np.json'
+database_op_np = path + 'bytecode_np/'
 
-op = [[f[:-5] for f in os.listdir(database_op) if f[-5:] == '.json'],[f[:-5] for f in os.listdir(database_op_np) if f[-5:] == '.json']]
+op = [[f[:-5] for f in os.listdir(database_op) if f[-5:] == '.json'], [f[:-5] for f in os.listdir(database_op_np) if f[-5:] == '.json']]
 N = len(op[0])
 N_np = len(op[1])
 
@@ -80,7 +80,7 @@ for i in op[1]:
    
 #print(tr_dico)
 
-with open(path + 'op_freq.json','rb',) as f:
+with open(path + 'op_freq.json', 'rb',) as f:
     op_freq = json.loads(f.read()) 
 
 #print(op_freq)
