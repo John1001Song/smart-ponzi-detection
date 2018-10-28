@@ -17,9 +17,13 @@
  --------------------------------------------------------------------------------
 
 """
+import os
 
 from web3 import Web3
 import csv
+import evmdasm
+import pyevmasm
+
 
 #sm_file = 'Smart_Contract_Addresses.list'
 sm_file='not_ponzi.csv'
@@ -48,8 +52,10 @@ for ad in add:
             f.write(repr(web3.eth.getCode(web3.toChecksumAddress(ad[1])))[12:-2])
         f.close()
     #Disasemble
-    #print(ad)
-    #os.system('cat /Users/e31989/Documents/sm_database/bytecode/' + ad +'.json | evmdis > /Users/e31989/Documents/features/' + ad + '.json' )
-    
-#for /r %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
-#for %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
+    # print(ad[1])
+    # if '0x' in ad[1]:
+        # os.system('cat ../dataset/bytecode_np/' + ad[1] +'.json | evmdis > /Users/Jinyue/Documents/smart-ponzi-detection/dataset/bytecode_np' + ad[1] + '.json')
+        # os.system('cat ../dataset/bytecode_np/' + ad[1] +'.json | evmasm -di /Users/Jinyue/Documents/smart-ponzi-detection/dataset/bytecode_np' + ad[1] + '.json -o ' + '/Users/Jinyue/Documents/smart-ponzi-detection/dataset/opcode_np/' + ad[1] + '.json')
+
+# for /r %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
+# for %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
