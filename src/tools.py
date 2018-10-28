@@ -113,15 +113,16 @@ def open_data(opcodes):
     
     print("tools.opend_data: define variables...")
     
-    path = '/Users/e31989/Desktop/e31989/Documents/sm_database/'
+    path = '../'
     
-    database_nml = path + 'normal.json'
-    database_int = path + 'internal.json'
+    database_nml = path + 'sm_database/normal.json'
+    database_int = path + 'sm_database/internal.json'
+    # which is database op?
     database_op = path + 'opcode/opcodes_count/'
     
-    database_nml_np = path + 'normal_np.json'
-    database_int_np = path + 'internal_np.json'
-    database_op_np = path + 'opcode_np/opcode_count/bytecode_np/'
+    database_nml_np = path + 'sm_database/normal_np.json'
+    database_int_np = path + 'sm_database/internal_np.json'
+    database_op_np = path + 'bytecode_np/'
   
     
     t1 = tl.compute_time(t0)
@@ -198,9 +199,9 @@ def open_data(opcodes):
         
     tr_dico = [
             #ponzi
-            [[ast.literal_eval(raw_nml[2*addr.index(op[0][i])+1][:-1]),ast.literal_eval(raw_int[2*addr_int.index(op[0][i])+1][:-1])] for i in range(N)],
+            [[ast.literal_eval(raw_nml[2*addr.index(op[0][i])+1][:-1]), ast.literal_eval(raw_int[2*addr_int.index(op[0][i])+1][:-1])] for i in range(N)],
             #non ponzi
-            [[ast.literal_eval(raw_nml_np[2*addr_np.index(op[1][i])+1][:-1]),ast.literal_eval(raw_int_np[2*addr_int_np.index(op[1][i])+1][:-1])] for i in range(N_np)]
+            [[ast.literal_eval(raw_nml_np[2*addr_np.index(op[1][i])+1][:-1]), ast.literal_eval(raw_int_np[2*addr_int_np.index(op[1][i])+1][:-1])] for i in range(N_np)]
             ]        
     
                 

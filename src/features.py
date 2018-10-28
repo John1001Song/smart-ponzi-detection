@@ -58,7 +58,7 @@ J = 100000
 
 tr_dico =[[],[]]
 #if the raw database has been modified
-#tr_dico = tl.open_data(opcodes)
+# tr_dico = tl.open_data(opcodes)
 
 with open(path + 'tr_dico_ponzi.json','rb') as f:
     tr_dico[0] = json.loads(f.read())
