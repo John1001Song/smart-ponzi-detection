@@ -3,21 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="f9e4366e-ce13-436a-a06c-d9981bd58745" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/cropped_lifetime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/cropped_lifetime.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/days.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/days.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/ethereum_pyramid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/ethereum_pyramid_in_out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid_in_out.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/government_by_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/government_by_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/government_by_user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/government_by_user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/hidden.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/hidden.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/lifetime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/lifetime.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/not_ponzi.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/not_ponzi.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/ponzi_collection.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/ponzi_collection.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/protect_the_castle.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/protect_the_castle.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/source_code.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/source_code.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/stats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/stats.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/stats_hidden.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/stats_hidden.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/tx.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/ponzi_dataset/tx.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/bytecode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/non_ponzi_dataset/Verified_Contracts-6_6_2018-data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/non_ponzi_dataset/non_ponzi_collection.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/opcode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/sm_database/internal_np.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/sm_database/normal_np.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/import_bcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/import_bcode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,36 +30,41 @@
     <session id="-1422886382">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="13" />
+          <entry key="csv" value="41" />
           <entry key="gitignore" value="1" />
-          <entry key="json" value="62" />
-          <entry key="py" value="17" />
+          <entry key="json" value="69" />
+          <entry key="md" value="2" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="62" />
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="17" />
+          <entry key="JSON" value="69" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="42" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="469" />
+          <entry key="md" value="517" />
+          <entry key="py" value="764" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="469" />
+          <entry key="Markdown" value="517" />
+          <entry key="Python" value="764" />
         </counts>
       </usages-collector>
     </session>
@@ -66,13 +72,59 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/features.py">
+        <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/government_by_user.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3005">
-              <caret line="280" column="31" lean-forward="true" selection-start-line="280" selection-start-column="31" selection-end-line="280" selection-end-column="31" />
+            <state relative-caret-position="390">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/hidden.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/not_ponzi.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/non_ponzi_collection.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reproduce.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="225">
+                <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/import_bcode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
               <folding>
-                <element signature="e#949#967#0" expanded="true" />
+                <element signature="e#948#969#0" expanded="true" />
+                <marker date="1541359411963" expanded="true" signature="2408:2413" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ponzi_collection.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="55" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -80,67 +132,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/import_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="333">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding>
                 <element signature="e#1197#1210#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="206" column="16" lean-forward="true" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="16" />
-              <folding>
-                <element signature="e#948#958#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/import_bcode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="57" column="74" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="74" />
-              <folding>
-                <element signature="e#947#956#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/Verified_Contracts-6_6_2018-data.csv">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/sm_database/internal_np.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/sm_database/normal_np.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -159,9 +157,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/import_data.py" />
-        <option value="$PROJECT_DIR$/src/import_bcode.py" />
         <option value="$PROJECT_DIR$/src/tools.py" />
         <option value="$PROJECT_DIR$/src/features.py" />
+        <option value="$PROJECT_DIR$/reproduce.md" />
+        <option value="$PROJECT_DIR$/src/import_bcode.py" />
       </list>
     </option>
   </component>
@@ -199,6 +198,18 @@
               <item name="dataset" type="462c0819:PsiDirectoryNode" />
               <item name="ponzi_dataset" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="smart-ponzi-detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-ponzi-detection" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="ponzi_dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="smart_contract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-ponzi-detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-ponzi-detection" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -209,6 +220,14 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataset/ponzi_dataset" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -314,13 +333,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19452055" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3369863" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -338,18 +358,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/smart-ponzi-detection/lib/python3.6/site-packages/matplotlib/backends/backend_macosx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2497">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/smart-ponzi-detection/lib/python3.6/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -366,15 +374,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/nGLD=0.312 from 0x6adf9e666e3e85876b1ba25e.json" />
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/Name.json" />
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid_in_out.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ponzi_collection.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/source_code.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/test.json" />
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np0xada4347a112336c8a87bf91b85af275a22a41740.json" />
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json" />
@@ -382,74 +381,49 @@
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json" />
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json" />
     <entry file="file://$PROJECT_DIR$/dataset/bytecode_np0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json" />
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x80aa81029df9afdc70a621c86d7a81d7e9ed7e3a.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0xa9e2320d9e6c17eb45a921cb2698b42256f5e142.json" />
     <entry file="file:///anaconda3/lib/python3.7/site-packages/tools/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/cropped_lifetime.csv">
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/Verified Contracts, 6%2F6%2F2018 - data.csv" />
+    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/sm_database/internal_np.json" />
+    <entry file="file://$PROJECT_DIR$/dataset/sm_database/normal_np.json" />
+    <entry file="file://$PROJECT_DIR$/src/features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3005">
+          <caret line="280" column="31" lean-forward="true" selection-start-line="280" selection-start-column="31" selection-end-line="280" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/lifetime.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/days.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid.csv">
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/cropped_lifetime.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/not_ponzi.csv">
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/stats_hidden.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x25db0f59bf166c49d1f859c9cb5928cbbf685981.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="820" selection-end-column="820" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/opcode_np/0xada4347a112336c8a87bf91b85af275a22a41740.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x26c4e381ffbdc825be9b986c3ba40525f0771e8d.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/sm_database/internal_np.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/sm_database/normal_np.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/bytecode_np/0x7753a9d834844cfde5c211ec3912b49f0d8b8e11.json">
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/stats.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
+        <state relative-caret-position="1540">
           <caret line="206" column="16" lean-forward="true" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="16" />
           <folding>
             <element signature="e#948#958#0" expanded="true" />
@@ -457,44 +431,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/features.py">
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/source_code.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/protect_the_castle.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/tx.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3005">
-          <caret line="280" column="31" lean-forward="true" selection-start-line="280" selection-start-column="31" selection-end-line="280" selection-end-column="31" />
-          <folding>
-            <element signature="e#949#967#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-4305" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ethereum_pyramid_in_out.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/government_by_time.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/hidden.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/government_by_user.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/not_ponzi.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/import_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="333">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
           <folding>
             <element signature="e#1197#1210#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/tx.csv">
+    <entry file="file://$PROJECT_DIR$/reproduce.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/non_ponzi_collection.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/Verified Contracts, 6%2F6%2F2018 - data.csv">
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/ponzi_collection.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="55" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/bytecode/0x0f170120733474c6ec7daf6ae6aeeeb8b645e92c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/bytecode/0x0f26c26318872e8fa85dee5d30cba45ed53b3d3e.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/ponzi_dataset/smart_contract/internal.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/import_bcode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="57" column="74" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="74" />
+        <state relative-caret-position="362">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           <folding>
-            <element signature="e#947#956#0" expanded="true" />
+            <element signature="e#948#969#0" expanded="true" />
+            <marker date="1541359411963" expanded="true" signature="2408:2413" ph="..." />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/non_ponzi_dataset/Verified_Contracts-6_6_2018-data.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
