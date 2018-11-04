@@ -18,7 +18,6 @@
 
 """
 
-
 import numpy as np
 import pandas as pd
 import tools as tl
@@ -34,57 +33,51 @@ t0 = time.clock()
 
 print("define variable and load data")
 
-path = '/Users/charles/charles/university/Master Project/go-ethereum/analysis_tool_python/SmartPonziDetection/dataset/'
+path = '../dataset/'
+database_op = path + 'ponzi_dataset/opcode/'
+database_op_np = path + 'non_ponzi_dataset/opcode/'
 
-# database_nml = path + 'normal.json'
-# database_int = path + 'internal.json'
-database_op = path + 'ponzi_opcode/'
-
-# database_nml_np = path + 'normal_np.json'
-# database_int_np = path + 'internal_np.json'
-# database_op_np = path + 'opcode_np/opcode_count/bytecode_np/'
-database_op_np = path + 'non_ponzi_opcode/'
-
-op = [[f[:-5] for f in os.listdir(database_op) if f[-5:] == '.json'], [f[:-5] for f in os.listdir(database_op_np) if f[-5:] == '.json']]
+op = [[f[:-5] for f in os.listdir(database_op) if f[-5:] == '.json'],
+      [f[:-5] for f in os.listdir(database_op_np) if f[-5:] == '.json']]
 N = len(op[0])
 N_np = len(op[1])
 
-opcodes = ['SWAP8','DUP11','DUP14','SWAP10','DUP15','LOG2','INVALID','SWAP9','SWAP5','SWAP12','SWAP16',
-           'DUP9','LOG1','DUP12','SWAP11','SWAP2','MSTORE8','SWAP14','DUP13','POP','DUP1','DUP8','DUP7',
-           'DUP3','DUP4','MSTORE','SWAP3','CODECOPY','JUMP','DUP5','SWAP13','STOP','CALLDATACOPY','SWAP7',
-           'SWAP1','SWAP6','RETURN','DUP6','SWAP4','REVERT','DUP2','SELFDESTRUCT','DUP10','DUP16','JUMPI',
-           'SSTORE','PUSH','LOG3','LOG4','Missing','SWAP15']
+opcodes = ['SWAP8', 'DUP11', 'DUP14', 'SWAP10', 'DUP15', 'LOG2', 'INVALID', 'SWAP9', 'SWAP5', 'SWAP12', 'SWAP16',
+           'DUP9', 'LOG1', 'DUP12', 'SWAP11', 'SWAP2', 'MSTORE8', 'SWAP14', 'DUP13', 'POP', 'DUP1', 'DUP8', 'DUP7',
+           'DUP3', 'DUP4', 'MSTORE', 'SWAP3', 'CODECOPY', 'JUMP', 'DUP5', 'SWAP13', 'STOP', 'CALLDATACOPY', 'SWAP7',
+           'SWAP1', 'SWAP6', 'RETURN', 'DUP6', 'SWAP4', 'REVERT', 'DUP2', 'SELFDESTRUCT', 'DUP10', 'DUP16', 'JUMPI',
+           'SSTORE', 'PUSH', 'LOG3', 'LOG4', 'Missing', 'SWAP15']
 
 J = 100000
 
-tr_dico =[[],[]]
-#if the raw database has been modified
-#tr_dico = tl.open_data(opcodes)
+tr_dico = [[], []]
+# if the raw database has been modified
+# tr_dico = tl.open_data(opcodes)
 
 with open(path + 'tr_dico_ponzi.json', 'rb') as f:
     tr_dico[0] = json.loads(f.read())
-    
+
 with open(path + 'tr_dico_nonponzi1.json', 'rb') as f:
-    tr_dico[1]= json.loads(f.read())
+    tr_dico[1] = json.loads(f.read())
 
 with open(path + 'tr_dico_nonponzi2.json', 'rb') as f:
     tr_dico[1] += json.loads(f.read())
-   
+
 with open(path + 'tr_dico_nonponzi3.json', 'rb') as f:
     tr_dico[1] += json.loads(f.read())
-   
-size_info = []   
+
+size_info = []
 for i in op[0]:
     size_info.append(os.path.getsize(path + 'bytecode/' + i + '.json'))
 for i in op[1]:
     size_info.append(os.path.getsize(path + 'bytecode_np/' + i + '.json'))
-   
-#print(tr_dico)
 
-with open(path + 'op_freq.json', 'rb',) as f:
-    op_freq = json.loads(f.read()) 
+# print(tr_dico)
 
-#print(op_freq)
+with open(path + 'op_freq.json', 'rb', ) as f:
+    op_freq = json.loads(f.read())
+
+# print(op_freq)
 
 t3 = tl.compute_time(t0)
 
@@ -130,27 +123,27 @@ internal :{
 value = 10**18 ETH value
 """
 
-print("computing features for ponzi...")   
-    
-ft_names = [
-            #'addr',
-            'ponzi',
-            'nbr_tx_in',
-            'nbr_tx_out', 
-            'Tot_in', 
-            'Tot_out',
-            'mean_in',
-            'mean_out',
-            'sdev_in',
-            'sdev_out',
-            'gini_in',
-            'gini_out',
-            'avg_time_btw_tx',
-            'gini_time_out',
-            'lifetime',
-            ]
+print("computing features for ponzi...")
 
-#ideas: lifetime,number of active days, max/min/avg delay between in and out, max/min balance
+ft_names = [
+    # 'addr',
+    'ponzi',
+    'nbr_tx_in',
+    'nbr_tx_out',
+    'Tot_in',
+    'Tot_out',
+    'mean_in',
+    'mean_out',
+    'sdev_in',
+    'sdev_out',
+    'gini_in',
+    'gini_out',
+    'avg_time_btw_tx',
+    'gini_time_out',
+    'lifetime',
+]
+
+# ideas: lifetime,number of active days, max/min/avg delay between in and out, max/min balance
 
 n = len(ft_names)
 ft = []
@@ -160,94 +153,86 @@ for i in range(N):
     val_out = []
     time_in = []
     time_out = []
-    
-    birth = float(tr_dico[0][i][0][0]['timeStamp'])
-    for tx in tr_dico[0][i][0]+tr_dico[0][i][1]:
-        
-        timestamp = float(tx['timeStamp'])
-        
-        if (timestamp-birth)/(60*60*24) <= J:
 
-            if tx['from'] == '' or tx['from']== op[0][i]:
+    birth = float(tr_dico[0][i][0][0]['timeStamp'])
+    for tx in tr_dico[0][i][0] + tr_dico[0][i][1]:
+
+        timestamp = float(tx['timeStamp'])
+
+        if (timestamp - birth) / (60 * 60 * 24) <= J:
+
+            if tx['from'] == '' or tx['from'] == op[0][i]:
                 val_out.append(float(tx['value']))
                 time_out.append(timestamp)
             else:
                 val_in.append(float(tx['value']))
                 time_in.append(timestamp)
-        
-    
+
     val_in = np.asarray(val_in)
     val_out = np.asarray(val_out)
-    time_in = np.asarray(time_in) 
-    time_out = np.asarray(time_out)         
-    
-    #data[0].append(val_in,val_out,time_in,time_out)
-    
-    res = tl.basic_features("ponzi",val_in,val_out,time_in,time_out)  
+    time_in = np.asarray(time_in)
+    time_out = np.asarray(time_out)
 
-    ft.append(np.concatenate((res,  np.asarray(op_freq[0][i],dtype = 'float32'))))
+    # data[0].append(val_in,val_out,time_in,time_out)
+
+    res = tl.basic_features("ponzi", val_in, val_out, time_in, time_out)
+
+    ft.append(np.concatenate((res, np.asarray(op_freq[0][i], dtype='float32'))))
 
 t4 = tl.compute_time(t3)
 
-print("computing features for non ponzi...")   
+print("computing features for non ponzi...")
 
-            
 for i in range(N_np):
     val_in = []
     val_out = []
     time_in = []
     time_out = []
-    
+
     birth = float(tr_dico[1][i][0][0]['timeStamp'])
-    for tx in tr_dico[1][i][0]+tr_dico[1][i][1]:
-        
+    for tx in tr_dico[1][i][0] + tr_dico[1][i][1]:
+
         timestamp = float(tx['timeStamp'])
-        
-        if (timestamp-birth)/(60*60*24) <= J:        
-        
-            
-            if tx['from'] == '' or tx['from']== op[1][i]:
+
+        if (timestamp - birth) / (60 * 60 * 24) <= J:
+
+            if tx['from'] == '' or tx['from'] == op[1][i]:
                 val_out.append(float(tx['value']))
                 time_out.append(float(tx['timeStamp']))
             else:
                 val_in.append(float(tx['value']))
-                time_in.append(float(tx['timeStamp']))     
+                time_in.append(float(tx['timeStamp']))
 
     val_in = np.asarray(val_in)
     val_out = np.asarray(val_out)
-    time_in = np.asarray(time_in) 
-    time_out = np.asarray(time_out)         
-    
-    #data[0].append(val_in,val_out,time_in,time_out)
-    
-    res = tl.basic_features("non_ponzi",val_in,val_out,time_in,time_out)  
+    time_in = np.asarray(time_in)
+    time_out = np.asarray(time_out)
 
-    ft.append(np.concatenate((res, np.asarray(op_freq[1][i],dtype = 'float32'))))
-    
+    # data[0].append(val_in,val_out,time_in,time_out)
 
+    res = tl.basic_features("non_ponzi", val_in, val_out, time_in, time_out)
+
+    ft.append(np.concatenate((res, np.asarray(op_freq[1][i], dtype='float32'))))
 
 t6 = tl.compute_time(t4)
 
+print("creating pandas dataframe...")
 
-print("creating pandas dataframe...") 
-   
-columns = [s + '@NUMERIC' for s in ft_names+opcodes]  
-columns[0] =   "ponzi@{ponzi,non_ponzi}"
-    
-df = pd.DataFrame(data = ft, columns = columns)
+columns = [s + '@NUMERIC' for s in ft_names + opcodes]
+columns[0] = "ponzi@{ponzi,non_ponzi}"
+
+df = pd.DataFrame(data=ft, columns=columns)
 
 df['size_info@NUMERIC'] = size_info
-#data.loc[:, data.columns != columns[0]] = data.loc[:, data.columns != columns[0]].astype(np.float64)
+# data.loc[:, data.columns != columns[0]] = data.loc[:, data.columns != columns[0]].astype(np.float64)
 
 t7 = tl.compute_time(t6)
-
-
 
 print("getting rid of outliers for the non ponzi instances")
 
 min_max_scaler = preprocessing.StandardScaler()
 
-#get rid of outliers
+# get rid of outliers
 out_index = 3
 """
 dum = df.drop(df[df[columns[0]] == 'ponzi'].index)
@@ -256,9 +241,10 @@ df_out = df_out.append(df.drop(df[df[columns[0]] == 'non_ponzi'].index))
 
 """
 dum = df.drop(df[df[columns[0]] == 'ponzi'].index)
-df_out = dum[(np.abs(stats.zscore(np.asarray(dum.drop(labels=[columns[0]]+columns[n:],axis=1), dtype = 'float32'))) < out_index).all(axis=1)]
+df_out = dum[(np.abs(
+    stats.zscore(np.asarray(dum.drop(labels=[columns[0]] + columns[n:], axis=1), dtype='float32'))) < out_index).all(
+    axis=1)]
 df_out = df_out.append(df.drop(df[df[columns[0]] == 'non_ponzi'].index))
-
 
 t8 = tl.compute_time(t7)
 

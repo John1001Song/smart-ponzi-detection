@@ -22,49 +22,68 @@ from web3 import Web3
 import csv
 import pandas as pd
 import numpy as np
+from os.path import isfile, join
+from os import listdir
+import os
 
-#sm_file = 'Smart_Contract_Addresses.list'
+# sm_file = 'Smart_Contract_Addresses.list'
 # sm_file = 'sm_add_nponzi.csv'
 path = '../'
 database_bcode = path + 'dataset/'
 
+ponzi_addr_csv_path = '../dataset/ponzi_dataset/ponzi_collection.csv'
+ponzi_bytecode_path = '../dataset/ponzi_dataset/bytecode/'
+ponzi_opcode_path = '../dataset/ponzi_dataset/opcode/'
+
 web3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/TO1X2JTG8k9PiaYd0iQr'))
 
 
-# with open(path + sm_file, 'rt') as f:
-#     truc = csv.reader(f)
-#     add = list(truc)
-#
-#
-# addresses = [pk[:42] for pklist in add for pk in pklist]
-with open(database_bcode + 'ponzi_dataset/ponzi_collection.csv') as f:
-    # truc = csv.reader(f)
-    # csv_file = list(truc)
-    df = pd.read_csv(f)
+def get_all_file_name(file_path):
+    # get all files names
+    files_names = [f for f in listdir(file_path) if isfile(join(file_path, f))]
+    name_array = []
 
-print(list(df))
+    for name in files_names:
+        if ".json" in name:
+            name_array.append(name)
 
-# addresses = [line[0].split('(')[0].strip() for line in csv_file if line[0] != 'addr']
-address_list = df['Address']
-print(address_list)
-
-i = 0
-for ad in address_list:
-    code = repr(web3.eth.getCode(web3.toChecksumAddress(ad)))[12:-2]
-    if code:
-        i += 1
-        # print(str(i) + ": " + ad)
-        with open(database_bcode + 'ponzi_dataset/bytecode/' + ad + '.json', 'w') as f:
-            f.write(code)
-        f.close()
-    else:
-        print(ad)
-    #Disasemble
-    #print(ad)
-    #os.system('cat /Users/e31989/Documents/sm_database/bytecode/' + ad +'.json | evmdis > /Users/e31989/Documents/features/' + ad + '.json' )
-    
-#for /r %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
-#for %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
+    return name_array
 
 
-def download_bytecode():
+def download_bytecode(address_csv_path, bytecode_path):
+    with open(address_csv_path) as f:
+        df = pd.read_csv(f)
+
+    address_list = df['Address']
+    print(address_list)
+
+    i = 0
+    for ad in address_list:
+        code = repr(web3.eth.getCode(web3.toChecksumAddress(ad)))[12:-2]
+        if code:
+            i += 1
+            with open(bytecode_path + ad + '.json', 'w') as f:
+                f.write(code)
+                print(ad, ' is finished.')
+            f.close()
+        else:
+            print(ad, 'cannot be processed.')
+        # Disasemble
+        # print(ad)
+        # os.system('cat /Users/e31989/Documents/sm_database/bytecode/' + ad +'.json | evmdis > /Users/e31989/Documents/features/' + ad + '.json' )
+
+    # for /r %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
+    # for %i in (*.json); do cat "%i" | evmdis > "/Users/e31989/Documents/features/$~ni.json"; done
+
+
+def convertToOpCode(bytcode_path, opcode_path):
+    file_list = get_all_file_name(bytcode_path)
+    for bytecode_file in file_list:
+        os.system(
+            'cat ' + bytcode_path + bytecode_file + ' | /Users/Jinyue/go/bin/evmdis > ' + opcode_path + bytecode_file)
+        print(bytecode_file, ' is converted to opcode.')
+
+
+if __name__ == '__main__':
+    download_bytecode(ponzi_addr_csv_path, ponzi_bytecode_path)
+    # convertToOpCode(ponzi_bytecode_path, ponzi_opcode_path)
