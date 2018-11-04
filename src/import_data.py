@@ -21,76 +21,79 @@
 
 """
 
-Run using cmd: scrapy runspider code/Cimport_data.py 
-With file 'Smart_Contract_Addresses.list' containing the blockchain addresses of each smart contracts
+Run with file '../dataset/ponzi_collection.csv' and '../dataset/non_ponzi_collection.csv' containing the blockchain addresses of each smart contracts
 
 Returns: json files containing all the transactions info of each smart contract
 
 """
 
-import scrapy
-from scrapy.contrib.spiders import CrawlSpider as Spider
+import requests
 import csv
 import ast
+import json
 
 
 
-path = '../dataset/'
-database_nml = path + 'sm_database/normal_np.json'
-database_int = path + 'sm_database/internal_np.json'
-
-#sm_file = 'Smart_Contract_Addresses.list'
-sm_file = 'not_ponzi.csv'
-
-with open(path + sm_file, 'rt') as f:
-    truc = csv.reader(f)
-    add = list(truc)
-    
-
-addresses = [pk[:42] for pklist in add for pk in pklist] 
-
-#create files
-nml = open(database_nml, 'w')
-nml.close()
-fired = open(database_int, 'w')
-fired.close()
+PATH = '../dataset/'
+DB = PATH + 'sm_database/{}.json'
 
 
+class EthCrawlerNormalTx:
+    def __init__(self, addresses, saved_file):
+        self.name = "crawler_nml"
+        self.addresses = addresses
+        self.addr_len = len(addresses)
+        self.saved_file = saved_file
+        self.url_nml_pattern = 'http://api.etherscan.io/api?module=account&action=txlist&address={0}&startblock=0&endblock=99999999&sort=asc&apikey=APIbirthday'
+        self.count = 0
 
-  
-#print(addresses)
+    def start(self):
+        with open(saved_file, 'w') as nml:
+            nml.close()
+        [self.crawl(addr) for addr in self.addresses]
 
-urls_nml = ['http://api.etherscan.io/api?module=account&action=txlist&address='+ pk + '&startblock=0&endblock=99999999&sort=asc&apikey=APIbirthday' for pk in addresses]
-
-class ethCrawler_normalTr(Spider):
-    name = "Crawler_nml"
-    start_urls =urls_nml
-    
-    
-    def parse(self, response):
-        with open(database_nml, 'a') as f:
-            f.write(response.url.split('=')[3].split('&')[0] +"\n")
-            f.write(response.body[38:-1].decode('utf-8') + '\n')
-
-            f.close
-"""
-
-urls_int = ['http://api.etherscan.io/api?module=account&action=txlistinternal&address=' + pk +'&startblock=0&endblock=9999999&sort=asc&apikey=APIbirthday' for pk in addresses]        
-class ethCrawler_internalTr(Spider):
-    name = "Crawler_int"
-    start_urls =urls_int
-
-    def parse(self, response):
-        with open(database_int, 'a') as f:
-            f.write(response.url.split('=')[3].split('&')[0] +"\n")
-            #print(response.body.decode('utf-8'))
-            if response.body[25:27].decode('utf-8') == 'OK':
-                f.write(response.body[38:-1].decode('utf-8') + '\n')
-            else:
-                f.write('[]\n')
-            f.close
+    def crawl(self, addr):
+        self.count += 1
+        print(addr + ', progress: ' + str(round(self.count/self.addr_len*100, 2)) + '%')
+        url = self.url_nml_pattern.format(addr)
+        response = requests.get(url)
+        with open(saved_file, 'a') as f:
+            f.write(addr + '\n')
+            f.write(response.text[38:-1] + '\n')
 
 
-"""
+class EthCrawlerInternalTx:
+    def __init__(self, addresses, saved_file):
+        self.name = "crawler_nml"
+        self.addresses = addresses
+        self.addr_len = len(addresses)
+        self.saved_file = saved_file
+        self.url_nml_pattern = 'http://api.etherscan.io/api?module=account&action=txlistinternal&address={0}&startblock=0&endblock=9999999&sort=asc&apikey=APIbirthday'
+        self.count = 0
 
-    
+    def start(self):
+        with open(saved_file, 'w') as int:
+            int.close()
+        [self.crawl(addr) for addr in self.addresses]
+
+    def crawl(self, addr):
+        self.count += 1
+        print(addr + ', progress: ' + str(round(self.count/self.addr_len*100, 2)) + '%')
+        url = self.url_nml_pattern.format(addr)
+        response = requests.get(url)
+        with open(saved_file, 'a') as f:
+            f.write(addr + "\n")
+            f.write(response.text[38:-1] + '\n' if response.text[25:27] == 'OK' else '[]\n')
+
+
+if __name__ == '__main__':
+    files = ['ponzi_collection.csv', 'non_ponzi_collection.csv']
+    for pz_file in files:
+        with open(PATH + pz_file, 'rt') as f:
+            csv_data = list(csv.reader(f))
+        addr_index = 2 if pz_file.startswith('ponzi') else 0
+        addresses = [line[addr_index].split(',')[0].split(' ')[0] for line in csv_data[1:]]
+        saved_file = DB.format('normal' if pz_file.startswith('ponzi') else 'normal_np')
+        EthCrawlerNormalTx(addresses, saved_file).start()
+        saved_file = DB.format('internal' if pz_file.startswith('ponzi') else 'internal_np')
+        EthCrawlerInternalTx(addresses, saved_file).start()
